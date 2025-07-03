@@ -39,7 +39,7 @@ if (!isset($_SESSION['usuario_id']) || !isset($_SESSION['usuario_nombre']) || !i
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container position-relative d-flex align-items-center">
 
-      <a href="index.php" class="logo d-flex align-items-center me-auto">
+      <a href="dashboard.php" class="logo d-flex align-items-center me-auto">
         <h1 class="sitename">DwCursor</h1><span>.</span>
       </a>
 

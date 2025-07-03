@@ -1,5 +1,24 @@
 <?php
-include 'head.php'
+// recuperar.php
+
+include 'head.php';
+require_once __DIR__ . '/app/model/db.php';
+require_once __DIR__ . '/app/controller/RecuperacionController.php';
+require_once __DIR__ . '/app/model/db.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = $_POST['email'];
+
+    // Crear instancia del controlador
+    $controlador = new RecuperacionController($mysqli);
+
+    // Intentar recuperar la cuenta
+    if ($controlador->recuperarCuenta($email)) {
+        echo "Hemos enviado un correo con un código de recuperación.";
+    } else {
+        echo "El correo ingresado no está registrado.";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +34,8 @@ include 'head.php'
         <div class="centro-form">
             <div class="form-container">
                 <p class="title">Recupera tu cuenta</p>
-                <form class="form">
-                    <input type="email" class="input" placeholder="Ingresa tu email" required>
+                <form method="POST" class="form">
+                    <input type="email" name="email" class="input" placeholder="Ingresa tu email" required>
                     <button class="form-btn" type="submit">Enviar enlace</button>
                 </form>
                 <p class="sign-up-label">

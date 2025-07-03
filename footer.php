@@ -30,14 +30,22 @@
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>---</h4>
+          <h4>Cursos</h4>
           <ul>
             <li><a href="index.php">Cursos</a></li>
             <li><a href="index.php#about">Mis cursos</a></li>
-            <li><a href="#">Asistencia</a></li>
-            <li><a href="">Configuracion</a></li>
           </ul>
         </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4> Configuracion</h4>
+          <ul>
+            <li><a href="buzon.php">Buzon</a></li>
+            <li><a href="registrar.php">Registrar</a></li>
+            <li><a href="ayuda_admin.php">Panel de soportes</a></li>
+          </ul>
+        </div>
+
       </div>
     </div>
 
