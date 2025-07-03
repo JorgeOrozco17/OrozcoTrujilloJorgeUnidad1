@@ -71,6 +71,10 @@ public function obtenerUsuarioPorId($id) {
     return $this->usuarioModel->obtenerUsuarioPorId($id);
 }
 
+public function mostrarUsuarios() {
+    return $this->usuarioModel->mostrarUsuarios();
+}
+
 
 }
 ?>

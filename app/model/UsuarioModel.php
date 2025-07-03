@@ -75,6 +75,13 @@ public function obtenerUsuarioPorId($id) {
     return $result->fetch_assoc();
 }
 
+public function mostrarUsuarios() {
+    $stmt = $this->conn->prepare("SELECT * FROM usuarios");
+    $stmt->execute();
+    $result = $stmt->get_result();
+    return $result->fetch_all(MYSQLI_ASSOC);
+}
+
 
 }
 ?>
