@@ -23,5 +23,26 @@ class ContactoModel {
         // Retorna los mensajes obtenidos
         return $result;
     }
+
+    public function obtenerMensajePorId($id){
+        // Preparar la consulta
+        $stmt = $this->conn->prepare("SELECT id, nombre, telefono, email, mensaje, fecha FROM contacto WHERE id = ?");
+        $stmt->bind_param("i", $id);  // Vincular el parámetro como entero
+        $stmt->execute();
+
+        // Obtener el resultado de la consulta
+        $result = $stmt->get_result();
+
+        // Verificar si el mensaje existe
+        if ($result->num_rows > 0) {
+            // Retornar el primer mensaje encontrado
+            return $result->fetch_assoc();
+        } else {
+            return null;  // No se encontró el mensaje
+        }
+        $stmt->close();
+        return $result->fetch_assoc();
+    }
+
 }
 ?>
