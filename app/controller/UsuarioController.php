@@ -67,6 +67,10 @@ public function cambiarPasswordConCodigo($email, $codigo, $nueva, $confirmar) {
     }
 }
 
+public function obtenerUsuarioPorId($id) {
+    return $this->usuarioModel->obtenerUsuarioPorId($id);
+}
+
 
 }
 ?>

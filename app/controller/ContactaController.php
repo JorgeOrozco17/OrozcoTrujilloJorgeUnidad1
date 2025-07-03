@@ -20,5 +20,9 @@ class ContactoController {
     public function mostrarMensajes() {
         return $this->contactoModel->obtenerMensajes();
     }
+
+    public function obtenerMensajePorId($id){
+        return $this->contactoModel->obtenerMensajePorId($id);
+    }
 }
 ?>
